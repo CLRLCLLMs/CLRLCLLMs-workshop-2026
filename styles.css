@@ -1,0 +1,402 @@
+/* =========================================================
+   CLRLC-LLMs Workshop · NeurIPS 2026
+   Stylesheet — edit colours and fonts in :root below.
+   ========================================================= */
+
+:root {
+  /* ---- COLOUR PALETTE ---- */
+  --ink:        #1a1f2e;   /* primary text */
+  --ink-soft:   #4a5267;   /* secondary text */
+  --paper:      #faf8f3;   /* page background */
+  --paper-2:    #f3efe6;   /* card / band background */
+  --rule:       #d9d2c2;   /* dividers and borders */
+  --accent:     #8a3324;   /* deep terracotta — primary accent */
+  --accent-soft:#c5704f;   /* lighter terracotta */
+  --gold:       #b8893d;   /* warm gold */
+  --link:       #5a2a1f;   /* link colour */
+
+  /* ---- TYPOGRAPHY ---- */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--accent); }
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+nav.top {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250, 248, 243, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+nav.top .inner {
+  max-width: 1100px; margin: 0 auto; padding: 14px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; flex-wrap: wrap;
+}
+nav.top .brand {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+nav.top .brand span { color: var(--accent); }
+nav.top ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; flex-wrap: wrap; }
+nav.top a { text-decoration: none; color: var(--ink-soft); font-size: 14px; font-weight: 500; }
+nav.top a:hover { color: var(--accent); }
+
+/* =========================================================
+   HERO
+   =========================================================
+   - Default: CSS-generated warm gradient + texture (no image needed)
+   - Optional: drop a photo at images/hero-bg.jpg and ADD class `with-bg`
+     to <header class="hero">. Style is below.
+*/
+header.hero {
+  position: relative;
+  padding: 80px 32px 80px;
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(184, 137, 61, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(138, 51, 36, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(197, 112, 79, 0.10) 0%, transparent 60%),
+    linear-gradient(180deg, #f6f0e3 0%, #faf8f3 100%);
+}
+/* Subtle grain / noise overlay */
+header.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.54  0 0 0 0 0.2  0 0 0 0 0.14  0 0 0 0.08 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  opacity: 0.6; pointer-events: none; mix-blend-mode: multiply;
+}
+/* Decorative dot grid in top-right */
+header.hero::after {
+  content: ""; position: absolute; right: -50px; top: 40px;
+  width: 240px; height: 240px;
+  background-image: radial-gradient(circle, rgba(138, 51, 36, 0.18) 1px, transparent 1px);
+  background-size: 14px 14px;
+  pointer-events: none; opacity: 0.7;
+}
+/* OPTIONAL background photo — activate by adding class "with-bg" to <header class="hero"> */
+header.hero.with-bg {
+  background-image:
+    linear-gradient(180deg, rgba(246, 240, 227, 0.85) 0%, rgba(250, 248, 243, 0.95) 100%),
+    url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+header.hero.with-bg::before, header.hero.with-bg::after { opacity: 0.4; }
+
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+
+.hero-logos {
+  display: flex; align-items: center; gap: 24px;
+  margin-bottom: 40px; flex-wrap: wrap;
+}
+.hero-logos .neurips-logo { height: 64px; width: auto; }
+.hero-logos .clrlc-logo   { height: 48px; width: auto; }
+.hero-logos .neurips-mark {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: 22px; letter-spacing: -0.01em; color: var(--ink);
+  border: 1.5px solid var(--ink); padding: 8px 16px; border-radius: 2px;
+  background: rgba(255,255,255,0.4);
+}
+.hero-logos .neurips-mark span { color: var(--accent); }
+.hero-logos .clrlc-mark {
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+  border-left: 2px solid var(--accent); padding-left: 16px; line-height: 1.5;
+}
+.hero-logos .clrlc-mark strong { color: var(--ink); display: block; font-size: 13px; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin-bottom: 24px;
+}
+.hero-eyebrow .dot {
+  width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.proposal-tag {
+  display: inline-block; padding: 6px 14px;
+  background: var(--ink); color: var(--paper);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  font-weight: 700; border-radius: 2px; margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(40px, 6vw, 72px); line-height: 1.02;
+  letter-spacing: -0.025em; margin: 0 0 20px; max-width: 18ch;
+}
+.hero-subtitle {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(18px, 2.2vw, 26px); color: var(--ink-soft);
+  margin: 0 0 36px; max-width: 50ch; font-weight: 400; line-height: 1.35;
+}
+.hero-meta {
+  display: flex; gap: 56px; flex-wrap: wrap; margin-top: 36px;
+  padding-top: 28px; border-top: 1px solid rgba(138, 51, 36, 0.2);
+}
+.hero-meta .item label {
+  display: block; font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px;
+}
+.hero-meta .item .value {
+  font-family: var(--font-serif); font-size: 18px; font-weight: 500;
+}
+
+/* =========================================================
+   ORG BANNER
+   ========================================================= */
+.org-banner {
+  background: var(--ink); color: var(--paper);
+  padding: 32px; text-align: center;
+}
+.org-banner .inner { max-width: 1100px; margin: 0 auto; }
+.org-banner .label {
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent-soft); margin-bottom: 8px; font-weight: 600;
+}
+.org-banner .name { font-family: var(--font-serif); font-size: 22px; font-weight: 600; }
+.org-banner .name a {
+  color: var(--paper); text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+section {
+  max-width: 1100px; margin: 0 auto; padding: 72px 32px;
+  border-bottom: 1px solid var(--rule);
+}
+section:last-of-type { border-bottom: none; }
+h2.section-title {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(28px, 3.5vw, 40px); letter-spacing: -0.01em;
+  margin: 0 0 8px; position: relative; padding-left: 24px;
+}
+h2.section-title::before {
+  content: ""; position: absolute; left: 0; top: 0.7em;
+  width: 12px; height: 2px; background: var(--accent);
+}
+.section-lead {
+  color: var(--ink-soft); max-width: 70ch; margin: 0 0 32px; font-size: 15px;
+}
+section p { max-width: 70ch; }
+
+/* =========================================================
+   AGENDA
+   ========================================================= */
+.agenda-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 14px; }
+.agenda-table th, .agenda-table td {
+  padding: 14px 16px; text-align: left;
+  border-bottom: 1px solid var(--rule); vertical-align: top;
+}
+.agenda-table th {
+  background: var(--paper-2);
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.agenda-table tr.break td {
+  background: var(--paper-2); font-style: italic; color: var(--ink-soft);
+}
+.agenda-table td:first-child {
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+  color: var(--accent); font-weight: 500; width: 130px;
+}
+.talk-title   { font-style: italic; display: block; margin-bottom: 2px; }
+.talk-speaker { color: var(--ink-soft); font-size: 13px; }
+
+/* =========================================================
+   PEOPLE GRID (Speakers + Organizers)
+   ========================================================= */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 32px; margin-top: 24px;
+}
+.person { text-align: left; }
+.person .avatar {
+  width: 100%; aspect-ratio: 1;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-size: 48px; font-weight: 500;
+  color: var(--accent-soft);
+  margin-bottom: 12px; overflow: hidden; position: relative;
+}
+/* fallback striped pattern when no image */
+.person .avatar.no-img::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg, transparent 0, transparent 8px,
+    rgba(138, 51, 36, 0.04) 8px, rgba(138, 51, 36, 0.04) 9px
+  );
+}
+.person .avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+  position: relative; z-index: 1;
+}
+.person .name {
+  font-family: var(--font-serif); font-size: 18px; font-weight: 600; margin: 0 0 4px;
+}
+.person .affil { font-size: 13px; color: var(--ink-soft); margin: 0; }
+.person .role  {
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: 4px;
+}
+
+/* =========================================================
+   CALL FOR LIGHTNING TALKS
+   ========================================================= */
+.cfp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px; margin-top: 24px;
+}
+.cfp-card {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  padding: 24px 28px; border-radius: 2px;
+}
+.cfp-card h3 {
+  font-family: var(--font-serif); font-size: 18px;
+  margin: 0 0 12px; font-weight: 600;
+}
+.cfp-card h3 small { font-weight: 400; color: var(--ink-soft); }
+.cfp-card ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; }
+.cfp-card li { margin-bottom: 4px; }
+
+.dates-heading {
+  font-family: var(--font-serif); margin-top: 40px;
+  font-size: 20px; font-weight: 600;
+}
+.dates-heading small { font-weight: 400; color: var(--ink-soft); font-size: 14px; }
+.dates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; margin-top: 24px;
+}
+.date-item {
+  padding: 16px 20px;
+  background: var(--paper-2);
+  border-top: 2px solid var(--accent);
+}
+.date-item .label {
+  display: block; font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px;
+}
+.date-item .value {
+  font-family: var(--font-serif); font-size: 16px; font-weight: 500;
+}
+
+/* =========================================================
+   SPONSORS
+   ========================================================= */
+.sponsor-tier { margin-top: 40px; }
+.sponsor-tier:first-of-type { margin-top: 24px; }
+.tier-label {
+  font-family: var(--font-serif); font-size: 14px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 16px;
+  display: inline-block; padding: 4px 12px;
+  background: var(--paper-2); border-left: 3px solid var(--accent);
+}
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+.sponsor-grid.sm {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+.sponsor {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  height: 100px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+.sponsor:hover { border-color: var(--accent); }
+.sponsor img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.sponsor.placeholder {
+  font-family: var(--font-serif); color: var(--ink-soft);
+  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  font-style: italic;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact-list {
+  list-style: none; padding: 0; margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 32px;
+}
+.contact-list li { font-size: 14px; }
+.contact-list .label {
+  display: block; font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 2px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  padding: 40px 32px; text-align: center;
+  color: var(--ink-soft); font-size: 13px;
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule);
+}
+footer .neurips {
+  display: inline-block;
+  font-family: var(--font-serif); font-weight: 600;
+  color: var(--accent); letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   TOPICS LIST (2-column)
+   ========================================================= */
+ul.topics { columns: 2; column-gap: 48px; padding-left: 18px; font-size: 14px; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 600px) {
+  ul.topics { columns: 1; }
+  nav.top .inner { padding: 14px 20px; }
+  header.hero { padding-left: 20px; padding-right: 20px; }
+  section { padding-left: 20px; padding-right: 20px; }
+  .hero-meta { gap: 24px; }
+  .hero-logos { gap: 16px; }
+}

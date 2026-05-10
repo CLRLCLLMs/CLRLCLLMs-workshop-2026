@@ -97,14 +97,47 @@ header.hero::after {
   pointer-events: none; opacity: 0.7;
 }
 /* OPTIONAL background photo — activate by adding class "with-bg" to <header class="hero"> */
-header.hero.with-bg {
-  background-image:
-    linear-gradient(180deg, rgba(246, 240, 227, 0.85) 0%, rgba(250, 248, 243, 0.95) 100%),
-    url("images/hero-bg.jpg");
+/* Works well even with small / low-res images: a blurred enlarged layer fills the
+   background while a sharp, smaller version is positioned to the right. */
+header.hero.with-bg { background: none; }
+header.hero.with-bg::before,
+header.hero.with-bg::after { display: none; }
+
+header.hero.with-bg .bg-layer,
+header.hero.with-bg .bg-blur,
+header.hero.with-bg .bg-tint {
+  position: absolute; inset: 0; pointer-events: none;
+}
+header.hero.with-bg .bg-blur {
+  background-image: url("images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
+  filter: blur(40px) saturate(1.1);
+  transform: scale(1.15);     /* hides the soft edges from the blur */
+  z-index: 0;
 }
-header.hero.with-bg::before, header.hero.with-bg::after { opacity: 0.4; }
+header.hero.with-bg .bg-tint {
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(184, 137, 61, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(138, 51, 36, 0.20) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(246, 240, 227, 0.78) 0%, rgba(250, 248, 243, 0.92) 100%);
+  z-index: 1;
+}
+header.hero.with-bg .bg-layer {
+  left: auto;                  /* anchor to right */
+  width: 38%; min-width: 280px;
+  background-image: url("images/hero-bg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+  opacity: 0.55;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 35%, #000 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, #000 35%, #000 100%);
+}
+@media (max-width: 720px) {
+  header.hero.with-bg .bg-layer { display: none; }
+}
 
 .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
 

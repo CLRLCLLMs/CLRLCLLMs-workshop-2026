@@ -39,9 +39,9 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.95);
+      background: rgba(15, 23, 42, 0.97);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav-content {
@@ -54,14 +54,14 @@
     .logo {
       font-weight: 800;
       font-size: 1.1rem;
-      color: #0f172a;
+      color: #ffffff;
     }
 
     .nav-links {
       display: flex;
       gap: 28px;
       font-weight: 500;
-      color: #475569;
+      color: #cbd5e1;
     }
 
     /* Hero */
@@ -147,7 +147,7 @@
 
     .section-header h2 {
       margin-top: 12px;
-      font-size: 2.3rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: #0f172a;
     }
@@ -175,7 +175,7 @@
     }
 
     .about-card h3 {
-      font-size: 1.5rem;
+      font-size: 1.05rem;
       margin-bottom: 25px;
       color: #0f172a;
     }
@@ -183,6 +183,7 @@
     .goals li {
       margin-bottom: 18px;
       color: #475569;
+      line-height: 1.8;
     }
 
     /* Cards */
@@ -221,7 +222,7 @@
     }
 
     .card h3 {
-      font-size: 1.4rem;
+      font-size: 1rem;
       margin-bottom: 8px;
       color: #0f172a;
     }
@@ -249,7 +250,8 @@
     .schedule-table td {
       padding: 18px 20px;
       border-bottom: 1px solid #e2e8f0;
-      color: #475569;
+      color: #334155;
+      background: #ffffff;
     }
 
     /* Sponsor Cards */
@@ -259,7 +261,7 @@
     }
 
     .price {
-      font-size: 3rem;
+      font-size: 1.8rem;
       font-weight: 800;
       color: #4338ca;
       margin: 20px 0;
@@ -273,11 +275,12 @@
     .sponsor-card li {
       margin-bottom: 14px;
       color: #475569;
+      line-height: 1.7;
     }
 
     /* Footer */
     footer {
-      background: #020617;
+      background: #0f172a;
       color: white;
       text-align: center;
       padding: 80px 20px;
@@ -309,7 +312,7 @@
       }
 
       .section-header h2 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -414,9 +417,9 @@
   <section id="speakers" style="padding:60px 20px; background:#f8fafc;">
     <div class="container">
       <div class="section-header">
-        <span>Speakers</span>
+        <span style="color:#000000; font-weight:800; font-size:1.05rem;">Speakers</span>
         
-        <p>Researchers and practitioners from academia, industry, and global NLP communities.</p>
+        
       </div>
 
       <div class="card-grid" style="grid-template-columns:repeat(3, 1fr); gap:30px;">
@@ -665,8 +668,8 @@
     <div class="container">
       <div class="section-header">
         <span>Program Committee</span>
-        
-      </div>
+        <h2>Meet the Program Committee</h2>
+</div>
 
       <div class="card-grid">
         <div class="card">
@@ -717,7 +720,7 @@
       <div class="card-grid" style="grid-template-columns:repeat(2, 1fr); gap:30px;">
         <div class="card sponsor-card">
           <h3>Platinum</h3>
-          <div class="price" style="white-space:nowrap; font-size:2.6rem;">$20K–$30K</div>
+          <div class="price" style="white-space:nowrap; font-size:2rem;">$20K–$30K</div>
 
           <ul>
             <li>Sponsor logo on opening & closing slides</li>
@@ -771,7 +774,7 @@
     </div>
   </section>
 
-  <section id="contact" style="background:#f8fafc; padding:90px 0;">
+  <section id="contact" style="background:#ffffff; padding:90px 0; color:#0f172a;">
     <div class="container">
       <div class="section-header">
         <span>Contact</span>
@@ -791,8 +794,8 @@
           </a>
         </div>
 
-        <div class="about-card">
-          <h3>Contact Information</h3>
+        <div class="about-card" style="background:#ffffff; border:1px solid #cbd5e1;">
+          <h3 style="margin-bottom:30px;">Contact Information</h3>
 
           <ul class="goals">
             <li><strong>Workshop Email:</strong> centerlowresourcellms@gmail.com</li>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+#<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -314,16 +314,22 @@
 
   <nav>
     <div class="container nav-content">
-      <div class="logo">CLRLC–LLMs @ NeurIPS 2026</div>
+      <div class="logo">
+        <img src="neurips-logo.png" alt="NeurIPS Logo" style="height:42px; width:auto; object-fit:contain;">
+      </div>
 
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">Overview</a>
         <a href="#speakers">Speakers</a>
+        <a href="#cfp">Call for Papers</a>
         <a href="#schedule">Agenda</a>
         <a href="#organisers">Organisers</a>
-        <a href="#sponsors">Sponsors</a>
+        <a href="#sponsors">Sponsorship</a>
         <a href="#contact">Contact</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqPYWM7HhZ7q-SlIM7clXCrapALdqNrPCjnmWB17LU3IGyHg/viewform" target="_blank" style="background:#4338ca; color:white; padding:10px 18px; border-radius:10px; margin-left:10px;">
+          Join CLRLC Slack Community
+        </a>
       </div>
     </div>
   </nav>
@@ -347,38 +353,57 @@
         <a href="https://clrlcllms.github.io/CLRLCLLMs-workshop.github.io-NeurIPS-2025/" class="btn btn-secondary">Past Event</a>
       </div>
     </div>
+    </div>
   </section>
 
   
 
   <section id="about">
-    <div class="container about-grid">
+    <div class="container">
       <div>
         <div class="section-header" style="text-align:left; margin-bottom:30px;">
           <span>About the Workshop</span>
-          <h2>Building culturally aware multilingual AI systems.</h2>
+          
         </div>
 
         <p>
-          There are over 7,000 languages spoken globally, yet only a small number are considered high-resource languages in modern Large Language Model development.
-        </p>
+          Following the successful first CLRLC–LLMs Workshop @ NeurIPS 2025 held in person in Mexico City, which focused on scalable methods for low-resource data creation, model alignment, as well as discussions around language endangerment and linguistic inclusion in LLMs, the second CLRLC–LLMs Workshop aims to bring together diverse researchers from academia and industry, linguists, technologists, AI/ML engineers, open-source contributors, and NLP/AI communities working on low-resource languages to discuss the development, evaluation, alignment, and responsible deployment of multilingual and multicultural aware LLMs.
+         and will provide a platform for participants to share the challenges they face in building culturally inclusive and linguistically aware LLMs, the solutions and methodologies they have explored, current limitations in multilingual systems, and the open problems that remain unsolved in developing globally inclusive AI for low-resource language communities.</p>
 
         <br>
 
-        <p>
-          This workshop explores how multilingual and multicultural aware LLMs can better support low-resource languages, oral traditions, indigenous knowledge systems, dialectal diversity, and culturally grounded communication practices.
-        </p>
+        
       </div>
 
+      <div class="about-grid" style="margin-top:50px;">
       <div class="about-card">
         <h3>Workshop Goals</h3>
 
         <ul class="goals">
-          <li>Improve collaboration across global AI and low-resource language research communities.</li>
-          <li>Advance multilingual and multicultural aware LLM research.</li>
-          <li>Create mentorship and networking opportunities.</li>
-          <li>Promote responsible and culturally aware AI systems.</li>
-          <li>Support early-career researchers and independent researchers.</li>
+          <li>To improve collaboration across global AI and low-resource language research communities.</li>
+          <li>To create networking and mentorship opportunities for early-career researchers, students, and underrepresented communities working in multilingual NLP and low-resource language technologies.</li>
+          <li>To bring together speakers and experts working on multilingual and multicultural aware LLMs to share insights, experiences, research findings, and practical challenges from academia, industry, and community-driven initiatives.</li>
+          <li>To provide a space for independent researchers, students, and emerging researchers to showcase their work, ongoing research, datasets, tools, and ideas related to multilingual and low-resource LLM research.</li>
+          <li>To promote responsible, equitable, and culturally aware multilingual LLMs across diverse global communities.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3>Topics of Interest</h3>
+
+        <p style="color:#475569; margin-bottom:25px;">
+          We welcome contributions from NLP, linguistics, computational linguistics, cognitive science communities, as well as from practitioners and technologists working at the intersection of language, culture, and artificial intelligence. Submissions may include technical or interdisciplinary work in areas such as:
+        </p>
+
+        <ul class="goals">
+          <li>Computational Linguistics</li>
+          <li>NLP for Low-Resource Languages</li>
+          <li>Culturally Aware AI Systems</li>
+          <li>Speech, ASR, and Machine Translation</li>
+          <li>Evaluation and Benchmarking for Low-Resource Languages</li>
+          <li>Human–AI Interaction and Linguistic Inclusivity</li>
+          <li>New Techniques for Improving AI Models and LLMs in Low-Resource Settings</li>
+          
         </ul>
       </div>
     </div>
@@ -394,7 +419,7 @@
 
       <div class="card-grid">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600" alt="Everlyn Asiko">
+          <img src="everlyn.jpg" alt="Everlyn Asiko">
           <div class="card-content">
             <h3>Dr. Everlyn Asiko</h3>
             <p>Lelapa AI</p>
@@ -402,7 +427,7 @@
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=600" alt="Sunayana Sitaram">
+          <img src="sunayana.jpg" alt="Sunayana Sitaram">
           <div class="card-content">
             <h3>Sunayana Sitaram</h3>
             <p>Microsoft Research</p>
@@ -410,7 +435,7 @@
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600" alt="Steven Fernandes">
+          <img src="steven.jpg" alt="Steven Fernandes">
           <div class="card-content">
             <h3>Dr. Steven Fernandes</h3>
             <p>Creighton University</p>
@@ -418,7 +443,7 @@
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600" alt="Hanan Aldarmaki">
+          <img src="hanan.jpg" alt="Hanan Aldarmaki">
           <div class="card-content">
             <h3>Dr. Hanan Aldarmaki</h3>
             <p>MBZUAI</p>
@@ -426,7 +451,7 @@
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600" alt="Mark Johnson">
+          <img src="mark.jpg" alt="Mark Johnson">
           <div class="card-content">
             <h3>Mark Johnson</h3>
             <p>Macquarie University</p>
@@ -436,45 +461,21 @@
     </div>
   </section>
 
-  <section id="organisers" style="padding:60px 20px; background-color:#ffffff;">
+  <section id="cfp" style="background:#ffffff; padding:80px 0;">
     <div class="container">
       <div class="section-header">
-        <span>Organisers</span>
-        <h2>Meet the Organising Team</h2>
+        <span>Call for Papers</span>
+        <p>
+          The Call for Papers for CLRLC–LLMs Workshop @ NeurIPS 2026 will be announced soon.
+        </p>
       </div>
 
-      <div class="card-grid">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=600" alt="Joy Olusanya">
-          <div class="card-content">
-            <h3>Joy Olusanya</h3>
-            <p>Center for Low-Resource Languages and Cultures</p>
-          </div>
-        </div>
+      <div class="about-card" style="max-width:800px; margin:auto; text-align:center;">
+        <h3>To Be Announced</h3>
 
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600" alt="Bonaventure Dossou">
-          <div class="card-content">
-            <h3>Bonaventure F. P. Dossou</h3>
-            <p>McGill University & Mila</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600" alt="Alexis Palmer">
-          <div class="card-content">
-            <h3>Alexis Palmer</h3>
-            <p>University of Colorado Boulder</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600" alt="Cynthia Jayne Amol">
-          <div class="card-content">
-            <h3>Cynthia Jayne Amol</h3>
-            <p>Tonative</p>
-          </div>
-        </div>
+        <p style="color:#475569; margin-top:20px;">
+          Submission guidelines, important dates, topics of interest, and paper submission details will be released soon.
+        </p>
       </div>
     </div>
   </section>
@@ -613,66 +614,185 @@
     </div>
   </section>
 
+  <section id="organisers" style="padding:60px 20px; background-color:#ffffff;">
+    <div class="container">
+      <div class="section-header">
+        <span>Organisers</span>
+        <h2>Meet the Organising Committee</h2>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <img src="joy.jpg" alt="Joy Olusanya">
+          <div class="card-content">
+            <h3>Joy Olusanya</h3>
+            <p>Center for Low-Resource Languages and Cultures</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="bonaventure.jpg" alt="Bonaventure Dossou">
+          <div class="card-content">
+            <h3>Bonaventure F. P. Dossou</h3>
+            <p>McGill University & Mila</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="alexis.jpg" alt="Alexis Palmer">
+          <div class="card-content">
+            <h3>Alexis Palmer</h3>
+            <p>University of Colorado Boulder</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="cynthia.jpg" alt="Cynthia Jayne Amol">
+          <div class="card-content">
+            <h3>Cynthia Jayne Amol</h3>
+            <p>Tonative</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="program-committee" style="background:#f8fafc; padding:80px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span>Program Committee</span>
+        
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <img src="opeyemi.jpg" alt="Opeyemi Osakuade">
+          <div class="card-content">
+            <h3>Opeyemi Osakuade</h3>
+            <p>University of Edinburgh</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="mary.jpg" alt="Mary Salami">
+          <div class="card-content">
+            <h3>Mary Salami</h3>
+            <p>University of California, Santa Barbara</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="flora.jpg" alt="Flora Oladipupo">
+          <div class="card-content">
+            <h3>Flora Oladipupo</h3>
+            <p>Tolaram Group</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="cynthia-pc.jpg" alt="Cynthia Jayne Amol">
+          <div class="card-content">
+            <h3>Cynthia Jayne Amol</h3>
+            <p>Tonative</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="sponsors" style="background:#f8fafc;">
     <div class="container">
       <div class="section-header">
         <span>Sponsorship</span>
-        <h2>Sponsorship Opportunities</h2>
-        <p>Support globally inclusive AI and multilingual NLP research communities.</p>
+        <h2>Sponsorship Tiers</h2>
+        <p>
+          Support globally inclusive AI and multilingual NLP research communities.
+        </p>
       </div>
 
       <div class="card-grid">
         <div class="card sponsor-card">
-          <h3>Platinum Sponsor</h3>
-          <div class="price">$5,000+</div>
+          <h3>Platinum</h3>
+          <div class="price" style="white-space:nowrap; font-size:2.6rem;">$20K–$30K</div>
 
           <ul>
-            <li>Logo placement</li>
-            <li>Workshop acknowledgement</li>
-            <li>Recruitment visibility</li>
-            <li>Social media promotion</li>
+            <li>Sponsor logo on opening & closing slides</li>
+            <li>Verbal acknowledgement by organisers</li>
+            <li>Dedicated recruiter / demo table in the venue</li>
+            <li>Sponsor talk slot (5–10 min) or panel seat</li>
+            <li>Branded materials in attendee swag bags</li>
+            <li>Access to opt-in attendee resume book</li>
+            <li>Social media features on LinkedIn & X</li>
           </ul>
         </div>
 
         <div class="card sponsor-card">
-          <h3>Gold Sponsor</h3>
-          <div class="price">$2,500+</div>
+          <h3>Gold</h3>
+          <div class="price">$10K–$20K</div>
 
           <ul>
-            <li>Website visibility</li>
-            <li>Networking support</li>
-            <li>Workshop acknowledgement</li>
+            <li>Logo on workshop website & shared slide deck</li>
+            <li>Verbal acknowledgement by organisers</li>
+            <li>Recruiter / demo table in the venue</li>
+            <li>Branded materials in attendee swag bags</li>
+            <li>Access to opt-in attendee resume book</li>
+            <li>Social media mentions</li>
           </ul>
         </div>
 
         <div class="card sponsor-card">
-          <h3>Community Sponsor</h3>
-          <div class="price">$1,000+</div>
+          <h3>Silver</h3>
+          <div class="price">$5K–$10K</div>
 
           <ul>
-            <li>Student support</li>
-            <li>Poster sponsorship</li>
-            <li>Mentorship activities</li>
+            <li>Logo on workshop website & shared slide deck</li>
+            <li>Verbal acknowledgement by organisers</li>
+            <li>Branded flyer in attendee swag bags</li>
+            <li>Social media mention</li>
+          </ul>
+        </div>
+
+        <div class="card sponsor-card">
+          <h3>Bronze</h3>
+          <div class="price">$1.5K–$5K</div>
+
+          <ul>
+            <li>Logo on workshop website</li>
+            <li>Verbal acknowledgement by organisers</li>
+            <li>Listed acknowledgement in opening slides</li>
+            <li>Social media mention</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" style="background:#f8fafc; padding:90px 0;">
     <div class="container">
       <div class="section-header">
         <span>Contact</span>
-        <h2>Get in Touch</h2>
+        <h2>Contact & Organising Institution</h2>
       </div>
 
-      <p style="text-align:center; color:#475569; max-width:700px; margin:auto;">
-        For workshop partnerships, sponsorship inquiries, collaborations, or questions regarding participation, please contact the organising team.
-      </p>
+      <div class="about-grid" style="margin-top:40px; align-items:start;">
+        <div class="about-card">
+          <h3>Center for Low-Resource Languages and Cultures (CLRLC)</h3>
 
-      <div class="footer-contact" style="text-align:center; margin-top:30px;">
-        <p><strong>Email:</strong> joynaomiolusanya@gmail.com</p>
-        <p><strong>Organisation:</strong> Center for Low-Resource Languages and Cultures (CLRLC)</p>
+          <p style="color:#475569; margin-bottom:20px;">
+            This workshop is organised and supported by the Center for Low-Resource Languages and Cultures (CLRLC), a global initiative advancing research, technology, and community-building for low-resource languages and culturally inclusive AI systems. CLRLC works across multilingual NLP, linguistic inclusion, AI accessibility, and culturally grounded language technologies through collaborations with researchers, students, AI/ML engineers, open-source communities, and institutions worldwide.
+          </p></div>
+
+        <div class="about-card">
+          <h3>Contact Information</h3>
+
+          <ul class="goals">
+            <li><strong>Workshop Email:</strong> centerlowresourcellms@gmail.com</li>
+            <li><strong>Organisation Email:</strong> info@clrlc.org</li>
+            <li><strong>Admin Email:</strong> clrlc.center@gmail.com</li>
+            <li><strong>Website:</strong> https://www.clrlc.org/</li>
+            <li><strong>LinkedIn:</strong> Center for Low-Resource Languages and Culture</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -685,10 +805,7 @@
         We welcome partnerships supporting multilingual NLP research, culturally aware AI systems, and equitable representation for low-resource language communities worldwide.
       </p>
 
-      <div class="footer-contact">
-        <p>Joy Olusanya · Lead Organiser</p>
-        <p>joynaomiolusanya@gmail.com</p>
-      </div>
+      
     </div>
   </footer>
 

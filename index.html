@@ -306,9 +306,65 @@
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
+      .hero {
+        padding: 100px 0;
       }
+
+      .hero h1 {
+        font-size: 1.9rem;
+        line-height: 1.3;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .about-grid,
+      .card-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .schedule-table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        font-size: 0.85rem;
+        padding: 14px 12px;
+      }
+
+      .card img {
+        width: 140px;
+        height: 140px;
+      }
+
+      .container {
+        width: 94%;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+      }
+    }
 
       .nav-links {
         display: none;
@@ -348,7 +404,7 @@
 
       <h1 style="text-align:center; max-width:1000px; margin:auto;">
         The Second Workshop on Centering Low-Resource Languages and Cultures in the Age of Large Language Models <br>
-        <span style="display:block; margin-top:14px; font-size:1.1rem; font-weight:500; color:#cbd5e1; letter-spacing:0.5px; text-align:center;">
+        <span style="display:block; margin-top:28px; font-size:1.1rem; font-weight:600; color:#facc15; letter-spacing:0.5px; text-align:center;">
           CLRLC–LLMs Workshop @ NeurIPS 2026 · Sydney, Australia
         </span>
       </h1>

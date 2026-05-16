@@ -1,425 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CLRLC-LLMs Workshop Proposal · NeurIPS 2026</title>
-<meta name="description" content="2nd Annual CLRLC-LLMs Workshop — Centering Low-Resource Languages and Cultures in the Age of Large Language Models. Proposed for NeurIPS 2026.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLRLC-LLMs Workshop @ NeurIPS 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #1b263b;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav img {
+      height: 40px;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.2rem;
+      margin-top: 1rem;
+      background-color: #1b263b;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background-color: #415a77;
+    }
+
+    /* Flex spacing for menu links */
+    .nav-links {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+
+    /* Organizer section styling */
+    .organizer-container {
+      display: flex;
+      justify-content: center;  /* centers the cards horizontally */
+      align-items: flex-start;
+      flex-wrap: wrap;          /* makes it responsive for smaller screens */
+      gap: 30px;                /* space between cards */
+      margin-top: 2rem;
+    }
+
+    .organizer-card {
+      max-width: 250px;
+      text-align: center;
+      background-color: #fff;   /* subtle card background */
+      border-radius: 15px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .organizer-card:hover {
+      transform: translateY(-5px); /* small lift effect on hover */
+    }
+
+    .organizer-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;         /* maintains proper proportions */
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
 
-<!-- ===========================
-     NAVIGATION
-     =========================== -->
-<nav class="top">
-  <div class="inner">
-    <div class="brand">CLRLC-LLMs <span>2026</span></div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#speakers">Speakers</a></li>
-      <li><a href="#agenda">Agenda</a></li>
-      <li><a href="#cfp">Call for Talks</a></li>
-      <li><a href="#organizers">Organizers</a></li>
-      <li><a href="#sponsors">Sponsors</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ===========================
-     HERO SECTION
-     ===========================
-     OPTIONAL: To use a background photo, save it as `images/hero-bg.jpg`
-     and uncomment the `.hero.with-bg` block in style.css.
-     Otherwise the layered gradient/texture background is used.
--->
-<header class="hero" id="home">
-  <!-- Background layers — only render when class "with-bg" is added to <header class="hero"> -->
-  <div class="bg-blur"></div>
-  <div class="bg-layer"></div>
-  <div class="bg-tint"></div>
-
-  <div class="hero-inner">
-
-    <div class="hero-logos">
-      <!-- IMAGE SLOT: NeurIPS logo · path: images/neurips-logo.png -->
-      <img src="images/neurips-logo.png" alt="NeurIPS" class="neurips-logo"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-      <span class="neurips-mark" style="display:none;">Neur<span>IPS</span></span>
-
-      <!-- IMAGE SLOT (optional): CLRLC logo · path: images/clrlc-logo.png -->
-      <img src="images/clrlc-logo.png" alt="CLRLC" class="clrlc-logo"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <div class="clrlc-mark">
-        Organised by<br/>
-        <strong>Center for Low-Resource Languages &amp; Cultures</strong>
-      </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="https://neurips.cc/" target="_blank">
+      <img src="NeurIPS_logo_stacked.png" alt="NeurIPS Logo">
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#overview">Overview</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#lightning-talks">Call for Lightning Talks</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#contact">Contact</a>
     </div>
+  </nav>
 
-    <div class="proposal-tag">Workshop Proposal · NeurIPS 2026</div>
-
-    <h1 class="hero-title">CLRLC-LLMs Workshop</h1>
-    <p class="hero-subtitle">Centering Low-Resource Languages and Cultures in the Age of Large Language Models</p>
-
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      2nd Annual Edition · Following NeurIPS 2025, Mexico City
-    </div>
-
-    <div class="hero-meta">
-      <div class="item">
-        <label>Proposed Date</label>
-        <div class="value">December 2026 · [TBD]</div>
-      </div>
-      <div class="item">
-        <label>Proposed Venue</label>
-        <div class="value">NeurIPS 2026 · [Location TBD]</div>
-      </div>
-      <div class="item">
-        <label>Format</label>
-        <div class="value">In-person + Hybrid</div>
-      </div>
-    </div>
-  </div>
+  <!-- Home Section -->
+<header id="home">
+  <h1>CLRLC-LLMs Workshop @ NeurIPS 2025</h1>
+  <p><strong>Centering Low-Resource Languages and Cultures in the Age of Large Language Models</strong></p>
+  <p><strong>Date:</strong> December 1, 2025</p>
+  <p><strong>Location:</strong> Hilton Mexico City Reforma, Mexico City, Mexico</p>
 </header>
 
-<!-- ===========================
-     ORGANIZED BY BANNER
-     =========================== -->
-<div class="org-banner">
-  <div class="inner">
-    <div class="label">This Workshop Is Organised By</div>
-    <div class="name"><a href="https://www.clrlc.org/" target="_blank" rel="noopener">Center for Low-Resource Languages and Cultures (CLRLC)</a></div>
-  </div>
-</div>
+<style>
+  header {
+    background: url('mexico_city.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    position: relative;
+  }
 
-<!-- ===========================
-     OVERVIEW
-     =========================== -->
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 27, 42, 0.6); /* dark overlay for better text visibility */
+    z-index: 0;
+  }
+
+  header h1, header p {
+    position: relative;
+    z-index: 1;
+  }
+
+  header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+</style>
+
+
+  <!-- Overview Section -->
 <section id="overview">
-  <h2 class="section-title">Overview</h2>
-  <p>Following the success of the inaugural <a href="https://clrlcllms.github.io/CLRLCLLMs-workshop.github.io-NeurIPS-2025/" target="_blank" rel="noopener">CLRLC-LLMs Workshop at NeurIPS 2025</a> in Mexico City, we propose a second edition of the workshop at NeurIPS 2026. The workshop continues to explore the role of Large Language Models (LLMs) in shaping the future of multilingual and culturally inclusive artificial intelligence. While LLMs have transformed natural language processing, they remain largely optimized for high-resource and globally dominant languages — leaving low-resource languages and cultures significantly underrepresented in current AI research and development.</p>
-
-  <p>The 2026 edition builds on last year's conversations and aims to reframe the field by placing low-resource languages and cultures at the center of AI innovation. We propose to bring together researchers, linguists, developers, and technologists to share insights, challenges, and strategies for developing, evaluating, and deploying LLMs that uphold linguistic diversity and cultural identity across Africa, Asia, the Americas, and beyond.</p>
-
-  <p>Through invited talks, paper presentations, and panel discussions, participants will examine the intersections of AI, linguistics, and cultural diversity — promoting innovations that empower underrepresented language communities globally.</p>
+  <h2>Overview</h2>
+  <p>
+    The Centering Low-Resource Languages and Cultures in the Age of Large Language Models (CLRLC-LLMs) Workshop explores the role of Large Language Models (LLMs) in shaping the future of multilingual and culturally inclusive artificial intelligence. While LLMs have transformed natural language processing, they are still largely optimized for high-resource and globally dominant languages. Low-resource languages and cultures remain significantly underrepresented in current AI research and development.
+  </p>
+  <p>
+    This workshop aims to reframe conversations in language technology by placing low-resource languages and cultures at the center of AI innovation. It seeks to bring together researchers, linguists, developers, and technologists to share their insights, challenges, and strategies for developing, evaluating, and deploying LLMs that uphold linguistic diversity and cultural identity across Africa and parts of the Asian region.
+  </p>
+  <p>
+    Through talks, paper presentations, and collaborative discussions, the workshop promotes global collaboration, scalable approaches for data creation and model alignment, and ethical, culturally aware evaluation of LLMs. Ultimately, it aims to inspire interdisciplinary research that bridges linguistics, computer science, and engineering toward a more inclusive and representative AI landscape.
+  </p>
+  <p>
+    Through invited talks, paper presentations, and panel discussions, participants will examine the intersections of AI, linguistics, and cultural diversity promoting innovations that empower underrepresented language communities globally.
+  </p>
 </section>
 
-<!-- ===========================
-     SPEAKERS
-     ===========================
-     IMAGE SLOTS: Save each speaker photo as images/speakers/speaker-N.jpg
-     (square, ideally 600x600px). To add/remove speakers, copy or delete a
-     <div class="person"> block below.
--->
-<section id="speakers">
-  <h2 class="section-title">Proposed Speakers</h2>
-  <p class="section-lead">A line-up of researchers and practitioners working at the frontier of multilingual and culturally grounded NLP. Speakers below are tentative pending workshop acceptance.</p>
-
-  <div class="people-grid">
-    <!-- SPEAKER 1 · images/speakers/speaker-1.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/speakers/speaker-1.jpg" alt="Speaker 1"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='S1';">
-      </div>
-      <p class="name">[Speaker Name]</p>
-      <p class="affil">[Affiliation]</p>
-    </article>
-
-    <!-- SPEAKER 2 · images/speakers/speaker-2.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/speakers/speaker-2.jpg" alt="Speaker 2"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='S2';">
-      </div>
-      <p class="name">[Speaker Name]</p>
-      <p class="affil">[Affiliation]</p>
-    </article>
-
-    <!-- SPEAKER 3 · images/speakers/speaker-3.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/speakers/speaker-3.jpg" alt="Speaker 3"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='S3';">
-      </div>
-      <p class="name">[Speaker Name]</p>
-      <p class="affil">[Affiliation]</p>
-    </article>
-
-    <!-- SPEAKER 4 · images/speakers/speaker-4.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/speakers/speaker-4.jpg" alt="Speaker 4"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='S4';">
-      </div>
-      <p class="name">[Speaker Name]</p>
-      <p class="affil">[Affiliation]</p>
-    </article>
-  </div>
-</section>
-
-<!-- ===========================
-     AGENDA
-     =========================== -->
+<!-- Agenda Section -->
 <section id="agenda">
-  <h2 class="section-title">Proposed Agenda</h2>
-  <p class="section-lead">Provisional one-day schedule. Final times and speakers will be confirmed if the workshop is accepted.</p>
+  <h2>Agenda</h2>
 
-  <table class="agenda-table">
+  <h3>Monday, 1 December 2025</h3>
+
+  <table class="agenda-table" style="width:100%; border-collapse: collapse; margin-top: 15px;">
     <thead>
-      <tr>
-        <th>Time</th>
-        <th>Session</th>
-        <th>Details</th>
+      <tr style="background-color:#f2f2f2; text-align:left;">
+        <th style="padding:10px; border:1px solid #ddd; width:15%;">Time</th>
+        <th style="padding:10px; border:1px solid #ddd; width:30%;">Session</th>
+        <th style="padding:10px; border:1px solid #ddd; width:55%;">Details</th>
       </tr>
     </thead>
+
     <tbody>
-      <tr><td>09:00 – 09:30</td><td>Workshop Opening &amp; Registration</td><td>[Room TBD]</td></tr>
-      <tr><td>09:30 – 09:45</td><td>Welcome &amp; Opening Remarks</td><td>Workshop Organizers</td></tr>
-      <tr><td>09:45 – 10:30</td><td>Keynote</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker, Affiliation]</span></td></tr>
-      <tr class="break"><td>10:30 – 10:45</td><td>Coffee Break</td><td></td></tr>
-      <tr><td>10:45 – 11:00</td><td>Networking</td><td>Informal networking session</td></tr>
-      <tr><td>11:00 – 11:15</td><td>Spotlight</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker]</span></td></tr>
-      <tr><td>11:15 – 11:30</td><td>Spotlight</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker]</span></td></tr>
-      <tr><td>11:30 – 11:45</td><td>Spotlight</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker]</span></td></tr>
-      <tr><td>11:45 – 12:00</td><td>Spotlight</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker]</span></td></tr>
-      <tr class="break"><td>12:00 – 13:00</td><td>Lunch Break</td><td></td></tr>
-      <tr><td>13:00 – 13:45</td><td>Keynote</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker, Affiliation]</span></td></tr>
-      <tr><td>13:45 – 14:00</td><td>Spotlight</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker]</span></td></tr>
-      <tr><td>14:00 – 14:45</td><td>Keynote</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker, Affiliation]</span></td></tr>
-      <tr><td>14:45 – 15:00</td><td>Spotlight</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker]</span></td></tr>
-      <tr class="break"><td>15:00 – 15:15</td><td>Afternoon Break</td><td></td></tr>
-      <tr><td>15:15 – 15:30</td><td>Spotlight</td><td><span class="talk-title">[Title]</span><span class="talk-speaker">[Speaker]</span></td></tr>
-      <tr><td>15:30 – 16:30</td><td>Panel / Round Tables</td><td><span class="talk-title">[Theme]</span></td></tr>
-      <tr><td>16:30 – 17:00</td><td>Closing Remarks</td><td>Workshop Chair</td></tr>
+
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">09:00–09:30</td>
+        <td style="padding:10px; border:1px solid #ddd;">Workshop Opening & Registration</td>
+        <td style="padding:10px; border:1px solid #ddd;">Don Alberto 1</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">09:30–09:45</td>
+        <td style="padding:10px; border:1px solid #ddd;">Welcome & Opening Remarks</td>
+        <td style="padding:10px; border:1px solid #ddd;">Workshop Organizer — Oluchi Audu and Flora Oladipupo</td>
+      </tr>
+
+      <tr style="background-color:#fafafa;">
+        <td style="padding:10px; border:1px solid #ddd;">09:45–10:30</td>
+        <td style="padding:10px; border:1px solid #ddd;">Keynote Speaker</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Towards Representative, Trustworthy and Scalable Multilingual, Multi-cultural Evaluation</em><br>
+          Sunayana Sitaram (Microsoft India)
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">10:30–10:45</td>
+        <td style="padding:10px; border:1px solid #ddd;">Coffee Break</td>
+        <td style="padding:10px; border:1px solid #ddd;"></td>
+      </tr>
+
+      <!-- Spotlights -->
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">10:45–11:00</td>
+        <td style="padding:10px; border:1px solid #ddd;">Networking Session </td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Networking Session </em><br>
+        </td>
+      </tr>
+
+      <tr style="background-color:#fafafa;">
+        <td style="padding:10px; border:1px solid #ddd;">11:00–11:15</td>
+        <td style="padding:10px; border:1px solid #ddd;">Spotlight Presentation</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Culturally aware instruction and alignment methods for low-resource Indian-language LLMs</em><br>
+          Praveen Tangarajan & Madhvi Sharma
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">11:15–11:30</td>
+        <td style="padding:10px; border:1px solid #ddd;">Spotlight Presentation</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>ENLIVEN-1000: A Comprehensive Revitalization Framework for 1000+Endangered Languages via Broad-Coverage LID and LLM-Augmented MT</em><br>
+          Philip Meng
+        </td>
+      </tr>
+
+      <tr style="background-color:#fafafa;">
+        <td style="padding:10px; border:1px solid #ddd;">11:30–11:45</td>
+        <td style="padding:10px; border:1px solid #ddd;">Spotlight Presentation</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>AfriStereo: A Culturally Grounded Dataset for Evaluating Stereotypical Bias in Large Language Models </em><br>Oche David
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">11:45–12:00</td>
+        <td style="padding:10px; border:1px solid #ddd;">Spotlight Presentation</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Developing a Non-Western Culture Aware RAG Application</em><br>
+          Ariana Mondiri
+        </td>
+      </tr>
+
+      <tr style="background-color:#f2f2f2;">
+        <td style="padding:10px; border:1px solid #ddd;">12:00–13:00</td>
+        <td style="padding:10px; border:1px solid #ddd;">Lunch Break</td>
+        <td style="padding:10px; border:1px solid #ddd;"></td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">13:00–13:45</td>
+        <td style="padding:10px; border:1px solid #ddd;">Keynote Speaker</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Endangered Languages in the Age of LLM</em><br>
+          Emily Prud'hommeaux (Boston College)
+        </td>
+      </tr>
+
+      <tr style="background-color:#fafafa;">
+        <td style="padding:10px; border:1px solid #ddd;">13:45–14:00</td>
+        <td style="padding:10px; border:1px solid #ddd;">Spotlight Presentation</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>CL-PDE: A Heterogeneous Graph Framework for Cross-Lingual Mental Health Ontologies</em><br>
+          Isabel Michelle
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">14:00–14:45</td>
+        <td style="padding:10px; border:1px solid #ddd;">Keynote Speaker</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Active Learning for Low-resource Efficient NLP</em><br>
+          Bonaventure F. P. Dossou (McGill University | Mila Québec)
+        </td>
+      </tr>
+      
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">14:45–15:00</td>
+        <td style="padding:10px; border:1px solid #ddd;">Spotlight Presentation</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Beyond Surface Text: Revealing Distinctive Personas in LLMs using Cognitive Bridging</em><br>
+          Jongwon Ryu
+        </td>
+      </tr>
+      
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">15:00–15:15</td>
+        <td style="padding:10px; border:1px solid #ddd;">Afternoon Break</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+        </td>
+      </tr>
+      
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">15:15–15:30</td>
+        <td style="padding:10px; border:1px solid #ddd;">Spotlight Presentation</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>HealthAlign-Agents: Self-Play Reflective Prompting for Culturally Aligned Health Communication in Low-Resource Languages</em><br>
+          Aura Arefeh Yavary
+        </td>
+      </tr>
+      
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">15:30–16:30</td>
+        <td style="padding:10px; border:1px solid #ddd;">Special Session</td>
+        <td style="padding:10px; border:1px solid #ddd;">
+          <em>Ethical Dataset Collection and Representation in Low-Resource Language Contexts</em><br>
+          Round Tables
+        </td>
+      </tr>
+      
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">16:30–17:00</td>
+        <td style="padding:10px; border:1px solid #ddd;">Closing Remarks</td>
+        <td style="padding:10px; border:1px solid #ddd;">Workshop Chair — Joy Olusanya</td>
+      </tr>
+
+    
+      
+
+
     </tbody>
   </table>
 </section>
 
-<!-- ===========================
-     CALL FOR LIGHTNING TALKS
-     =========================== -->
-<section id="cfp">
-  <h2 class="section-title">Call for Lightning Talks</h2>
-  <p>Pending workshop acceptance, we will invite researchers, practitioners, linguists, and students working on low-resource languages, culturally aware AI, and inclusive language technologies to submit Lightning Talk abstracts to the <em>Centering Low-Resource Languages and Cultures in the Age of Large Language Models (CLRLC-LLMs) Workshop @ NeurIPS 2026</em>.</p>
+<!-- Call for Lightning Talks Section -->
+<section id="lightning-talks">
+  <h2>Call for Lightning Talks</h2>
 
-  <p>Lightning Talks are short, focused presentations (5–7 minutes) that showcase ongoing research, new ideas, or visionary directions relevant to the workshop's theme. The session aims to spark interdisciplinary exchange and highlight work advancing culturally grounded AI.</p>
+  <p>
+    We invite researchers, practitioners, linguists, and students working on
+    low-resource languages, culturally aware AI, and inclusive language technologies
+    to submit Lightning Talk abstracts to the
+    <em>Centering Low-Resource Languages and Cultures in the Age of Large Language Models (CLRLC-LLMs) Workshop @ NeurIPS 2025</em>,
+    taking place in Mexico City on December 1, 2025.
+  </p>
 
-  <div class="cfp-grid">
-    <div class="cfp-card">
-      <h3>Topics of Interest</h3>
-      <ul class="topics">
-        <li>LLMs for low-resource languages</li>
-        <li>Culturally grounded NLP and multilingual evaluation</li>
-        <li>Dataset creation and benchmarks for African, Indigenous, and marginalized languages</li>
-        <li>Cross-linguistic transfer and model adaptation</li>
-        <li>Ethical, social, and policy dimensions of language technologies</li>
-        <li>Community-based and participatory AI</li>
-        <li>Speech, ASR, and translation in low-resource settings</li>
-        <li>Human–AI interaction for linguistic and cultural inclusivity</li>
-        <li>Cognitive or sociolinguistic perspectives on AI and language</li>
-        <li>Healthcare and biomedical translation for low-resource languages</li>
-      </ul>
-    </div>
+  <p>
+    Lightning Talks are short, focused presentations (5–7 minutes) that showcase
+    ongoing research, new ideas, or visionary directions relevant to the workshop’s theme.
+    The session aims to spark interdisciplinary exchange and highlight work advancing culturally grounded AI.
+  </p>
 
-    <div class="cfp-card">
-      <h3>Submission Instructions <small>(Tentative)</small></h3>
-      <ul>
-        <li><strong>Platform:</strong> [Submission link TBD]</li>
-        <li><strong>Type:</strong> Abstract (PDF)</li>
-        <li><strong>Length:</strong> Up to 1 page (excluding references)</li>
-        <li><strong>Format:</strong> NeurIPS 2026 style template</li>
-        <li><strong>Anonymity:</strong> Submissions must be anonymous</li>
-        <li><strong>Presentation:</strong> 5–7 minutes + Q&amp;A</li>
-        <li><strong>Mode:</strong> In-person at NeurIPS 2026</li>
-      </ul>
-    </div>
-  </div>
+  <h3>Scope and Topics of Interest</h3>
 
-  <h3 class="dates-heading">Important Dates <small>(Tentative)</small></h3>
-  <div class="dates">
-    <div class="date-item"><span class="label">Submission Deadline</span><span class="value">[Date TBD]</span></div>
-    <div class="date-item"><span class="label">Notification</span><span class="value">[Date TBD]</span></div>
-    <div class="date-item"><span class="label">Camera-Ready</span><span class="value">[Date TBD]</span></div>
-    <div class="date-item"><span class="label">Workshop Date</span><span class="value">December 2026</span></div>
-  </div>
+  <p>
+    We welcome contributions from NLP, linguistics, computational linguistics, cognitive science, and social science communities, as well as from practitioners and technologists working at the intersection of language, culture, and artificial intelligence.
+    Submissions may include technical or interdisciplinary work in areas such as:
+  </p>
+
+  <ul>
+    <li>LLMs for low-resource languages</li>
+    <li>Culturally grounded NLP and multilingual evaluation</li>
+    <li>Dataset creation, curation, and benchmarks for African, Indigenous, and marginalized languages</li>
+    <li>Cross-linguistic transfer and model adaptation</li>
+    <li>Ethical, social, and policy dimensions of language technologies</li>
+    <li>Community-based and participatory AI approaches</li>
+    <li>Speech, ASR, and translation in low-resource settings</li>
+    <li>Human–AI interaction for linguistic and cultural inclusivity</li>
+    <li>Cognitive or sociolinguistic perspectives on AI and language</li>
+    <li>Healthcare and biomedical machine translation for low-resource languages</li>
+  </ul>
+
+  <h3>Submission Instructions</h3>
+
+  <ul>
+    <li>
+      Submission Platform:
+      <span style="text-decoration: line-through; color: #888;">
+        <a href="https://openreview.net/group?id=NeurIPS.cc/2025/Workshop_Mexico_City/CLRLC-LLMs" target="_blank">
+          OpenReview – NeurIPS 2025 Workshops
+        </a>
+      </span>
+      <span style="color: red;">(CANCELLED – due to technical issues)</span>
+      <br><br>
+    </li>
+
+    <li>New Submission Platform: <a href="https://docs.google.com/forms/d/1GXexjyZXDa2M7T2C2DCd0t1P2C9X_coDVnYb6vAdJx4/viewform" target="_blank">Google Form</a></li>
+    <li>Submission Type: Abstract (PDF format)</li>
+    <li>Length: Up to 1 page (excluding references)</li>
+    <li>Title of the Lightning Talk</li>
+    <li>Format: Must follow the official NeurIPS 2025 style template</li>
+    <li>Anonymity: Submissions must be fully anonymous</li>
+    <li>Presentation Duration: 5–7 minutes + Q&A</li>
+    <li>Presentation Mode: In-person (Mexico City)</li>
+    <li>Deadline: November 19, 2025</li>
+  </ul>
+
+  <p style="color: red;">
+    Important: OpenReview submissions are no longer accepted. Please use the Google Form above.
+  </p>
+
+  <h3>Eligibility</h3>
+  <p>
+    The Call for Lightning Talks is open only to participants registered for NeurIPS 2025
+    in Mexico City. Funding is not available for Lightning Talk presenters.
+  </p>
+
+  <h3>Important Dates</h3>
+  <ul>
+    <li>Workshop Date: December 1, 2025 – NeurIPS 2025, Mexico City</li>
+  </ul>
+
+  <h3>Accepted Lightning Talks</h3>
+  <ul>
+    <li>
+      <a href="https://drive.google.com/file/d/1_EGVOGvt2WjQT48s0zXVx3CcI6LLU6nw/view?usp=sharing" target="_blank" rel="noopener">
+        Community-in-the-Loop: A Framework for Participatory Dataset Creation for Indigenous and African Languages
+      </a>
+    </li>
+
+    <li>
+      <a href="https://drive.google.com/file/d/17rShMM3Lum-GQ8Rk3J0lojRx10J1m0n6/view?usp=sharing" target="_blank" rel="noopener">
+        CL-PDE: A Heterogeneous Graph Framework for Cross-Lingual Mental Health Ontologies
+      </a>
+    </li>
+
+    <li>
+      <a href="https://drive.google.com/file/d/1hfuuQeeuDmnY4SomGoN59G8c-J7ZTEbY/view?usp=sharing" target="_blank" rel="noopener">
+        Culturally Aware Instruction and Alignment Methods for Low-Resource Indian-Language LLMs
+      </a>
+    </li>
+
+    <li>
+      <a href="https://drive.google.com/file/d/1l12HpA8zcqIpeqYTPmdMyzzhGh0JTh2k/view?usp=sharing" target="_blank" rel="noopener">
+        ENLIVEN-1000: A Comprehensive Revitalization Framework for 1000+ Endangered Languages via Broad-Coverage LID and LLM-Augmented MT
+      </a>
+    </li>
+    
+    <li>
+  <a href="https://drive.google.com/file/d/1nsYc-PShaEhekGUplgqPWo89X0fpcsnC/view?usp=sharing" target="_blank" rel="noopener">
+    Reflective Translation: Enhancing Low-Resource Machine Translation through Self-Reflection
+  </a>
+</li>
+    <li>
+  <a href="https://drive.google.com/file/d/1u9-o_2FrTqdCjvvSwcWevVtiVgF98ha-/view?usp=sharing" target="_blank" rel="noopener">
+    CultureManip: A Multilingual Benchmark for Mental Manipulation Detection
+  </a>
+</li>
+    <li>
+  <a href="https://drive.google.com/file/d/1GquXe8sUdKnsnyhPU4naxdbDdU1k9ABM/view?usp=sharing" target="_blank" rel="noopener">
+    Developing a Non-Western Culture-Aware RAG Application
+  </a>
+</li>
+    <li>
+  <a href="https://drive.google.com/file/d/1id78S98ytp_Z_ExfngaYF4Yr3s0hgJJw/view?usp=sharing" target="_blank" rel="noopener">
+    AfriStereo: A Culturally Grounded Dataset for Evaluating Stereotypical Bias in Large Language Models
+  </a>
+</li>
+     <li>
+  <a href="https://drive.google.com/file/d/1We5KtfP--oCS1r5_bVNmU62-9QWOM9iy/view?usp=sharing" target="_blank" rel="noopener">
+    Beyond Surface Text: Revealing Distinctive Personas in LLMs using Cognitive Bridging
+  </a>
+</li>
+     <li>
+  <a href="https://drive.google.com/file/d/1TJstlebMzb1qCS1kbPQu1IChG41co1yB/view?usp=drive_link" target="_blank" rel="noopener">
+   HealthAlign-Agents: Self-Play Reflective Prompting for Culturally Aligned Health Communication in Low-Resource Languages
+  </a>
+</li>
+    
+</ul>
+  
 </section>
 
-<!-- ===========================
-     ORGANIZERS
-     ===========================
-     IMAGE SLOTS: Save each organizer photo at the path shown in the comment.
--->
-<section id="organizers">
-  <h2 class="section-title">Organizers</h2>
-  <p class="section-lead">The CLRLC-LLMs workshop is organised by the <strong>Center for Low-Resource Languages and Cultures (CLRLC)</strong> together with collaborators across academia and industry.</p>
 
-  <div class="people-grid">
-    <!-- ORG · images/organizers/joy.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/organizers/joy.jpg" alt="Joy Olusanya"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='JO';">
-      </div>
-      <p class="role">Workshop Chair</p>
-      <p class="name">Joy Olusanya</p>
-      <p class="affil">Obafemi Awolowo University</p>
-    </article>
+<!-- Speakers Section -->
+<section id="speakers" style="padding:60px 20px; background:#f8fafc;">
+  <h2 style="text-align:center; color:#0d1b2a; margin-bottom:40px;">Speakers</h2>
 
-    <!-- ORG · images/organizers/mary.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/organizers/mary.jpg" alt="Mary Salami"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='MS';">
-      </div>
-      <p class="role">Organizer</p>
-      <p class="name">Mary Salami</p>
-      <p class="affil">UC Santa Barbara</p>
-    </article>
-
-    <!-- ORG · images/organizers/cynthia.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/organizers/cynthia.jpg" alt="Cynthia Jayne Amol"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='CA';">
-      </div>
-      <p class="role">Organizer</p>
-      <p class="name">Cynthia Jayne Amol</p>
-      <p class="affil">Maseno University · Tonative</p>
-    </article>
-
-    <!-- ORG · images/organizers/yann.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/organizers/yann.jpg" alt="Yann Le Beux"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='YB';">
-      </div>
-      <p class="role">Organizer</p>
-      <p class="name">Yann Le Beux</p>
-      <p class="affil">YUX Cultural AI Lab</p>
-    </article>
-
-    <!-- ORG · images/organizers/sharon.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/organizers/sharon.jpg" alt="Sharon Ibejih"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='SI';">
-      </div>
-      <p class="role">Organizer</p>
-      <p class="name">Sharon Ibejih</p>
-      <p class="affil">Tonative</p>
-    </article>
-
-    <!-- ORG · images/organizers/flora.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/organizers/flora.jpg" alt="Flora Oladipupo"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='FO';">
-      </div>
-      <p class="role">Organizer</p>
-      <p class="name">Flora Oladipupo</p>
-      <p class="affil">Tolaram Group</p>
-    </article>
-
-    <!-- ORG · images/organizers/oluchi.jpg -->
-    <article class="person">
-      <div class="avatar">
-        <img src="images/organizers/oluchi.jpg" alt="Oluchi Audu"
-             onerror="this.style.display='none'; this.parentElement.classList.add('no-img'); this.parentElement.dataset.initials='OA';">
-      </div>
-      <p class="role">Organizer</p>
-      <p class="name">Oluchi Audu</p>
-      <p class="affil">YUX Cultural AI Lab</p>
-    </article>
-  </div>
-</section>
-
-<!-- ===========================
-     SPONSORS
-     ===========================
-     IMAGE SLOTS: Drop sponsor logos (PNG with transparent background, ~200px tall)
-     into images/sponsors/ and update the src paths below.
--->
-<section id="sponsors">
-  <h2 class="section-title">Sponsors</h2>
-  <p class="section-lead">We gratefully acknowledge the support of our sponsors. Interested in sponsoring? See the <a href="#contact">Contact</a> section.</p>
-
-  <div class="sponsor-tier">
-    <h3 class="tier-label">Platinum</h3>
-    <div class="sponsor-grid">
-      <!-- SPONSOR · images/sponsors/platinum-1.png -->
-      <div class="sponsor"><img src="images/sponsors/platinum-1.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
-      <div class="sponsor"><img src="images/sponsors/platinum-2.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
+  <div class="speakers-row">
+    <!-- Speaker 1 -->
+    <div class="speaker-card">
+      <img src="emily-2 - Emily Prud'hommeaux.jpg" alt="Emily Prud’hommeaux">
+      <h3>
+        <a href="https://cs.bc.edu/prudhome/" target="_blank">Emily Prud’hommeaux</a>
+      </h3>
+      <p>Boston College</p>
     </div>
-  </div>
 
-  <div class="sponsor-tier">
-    <h3 class="tier-label">Gold</h3>
-    <div class="sponsor-grid">
-      <div class="sponsor"><img src="images/sponsors/gold-1.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
-      <div class="sponsor"><img src="images/sponsors/gold-2.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
-      <div class="sponsor"><img src="images/sponsors/gold-3.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
+    <!-- Speaker 2 -->
+    <div class="speaker-card">
+      <img src="sunayana_hires - Sunayana Sitaram.JPG" alt="Sunayana Sitaram">
+      <h3>
+        <a href="https://www.microsoft.com/en-us/research/people/susitara/" target="_blank">Sunayana Sitaram</a>
+      </h3>
+      <p>Microsoft Research India</p>
     </div>
-  </div>
 
-  <div class="sponsor-tier">
-    <h3 class="tier-label">Silver</h3>
-    <div class="sponsor-grid sm">
-      <div class="sponsor"><img src="images/sponsors/silver-1.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
-      <div class="sponsor"><img src="images/sponsors/silver-2.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
-      <div class="sponsor"><img src="images/sponsors/silver-3.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
-      <div class="sponsor"><img src="images/sponsors/silver-4.png" alt="Sponsor"
-        onerror="this.style.display='none'; this.parentElement.classList.add('placeholder'); this.parentElement.dataset.label='Logo';"></div>
+    <!-- Speaker 3 -->
+    <div class="speaker-card">
+      <img src="IMG_4473 - Bonaventure F. P. Dossou.jpg" alt="Bonaventure F. P. Dossou">
+      <h3>
+        <a href="https://bonaventuredossou.github.io" target="_blank">Bonaventure F. P. Dossou</a>
+      </h3>
+      <p>McGill University | Mila Quebec AI Institute</p>
     </div>
   </div>
 </section>
 
-<!-- ===========================
-     CONTACT
-     =========================== -->
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p>For questions, partnerships, or sponsorship inquiries, please reach out via any of the channels below.</p>
-  <ul class="contact-list">
-    <li><span class="label">Workshop Email</span><a href="mailto:centerlowresourcellms@gmail.com">centerlowresourcellms@gmail.com</a></li>
-    <li><span class="label">Organisation Email</span><a href="mailto:info@clrlc.org">info@clrlc.org</a></li>
-    <li><span class="label">Admin Email</span><a href="mailto:clrlc.center@gmail.com">clrlc.center@gmail.com</a></li>
-    <li><span class="label">Website</span><a href="https://www.clrlc.org/" target="_blank" rel="noopener">www.clrlc.org</a></li>
-    <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/company/center-for-low-resource-languages-and-culture/" target="_blank" rel="noopener">CLRLC on LinkedIn</a></li>
+<!-- Organizers Section -->
+<section id="organizers" style="padding: 60px 20px; background-color: #ffffff;">
+  <h2 style="text-align: center; color: #0d1b2a; margin-bottom: 40px;">Organizers</h2>
+
+  <div class="organizers-container">
+    <!-- Organizer 1 -->
+    <div class="speaker-card">
+      <img src="ay.jpg" alt="Joy Olusanya">
+      <h3><a href="#">Joy Olusanya</a></h3>
+      <span>Workshop Chair</span>
+      <a href="https://www.linkedin.com/in/joy-olusanya-209340206/" target="_blank">Obafemi Awolowo University 🔗</a>
+    </div>
+
+    <!-- Organizer 2 -->
+    <div class="speaker-card">
+      <img src="Mary.jpg" alt="Mary Salami">
+      <h3><a href="#">Mary Salami</a></h3>
+      <a href="https://www.linkedin.com/in/marysalami" target="_blank">University of California, Santa Barbara 🔗</a>
+    </div>
+
+    <!-- Organizer 3 -->
+    <div class="speaker-card">
+      <img src="0Q3A8226 - Cynthia Amol.jpg" alt="Cynthia Jayne Amol">
+      <h3><a href="#">Cynthia Jayne Amol</a></h3>
+      <a href="https://jayneamol.github.io/portfolio/" target="_blank">Maseno University | Tonative Community 🔗</a>
+    </div>
+
+    <!-- Organizer 4 -->
+    <div class="speaker-card">
+      <img src="Yann Pics 2024 v2 - Yann LE BEUX.png" alt="Yann Le Beux">
+      <h3><a href="#">Yann Le Beux</a></h3>
+      <a href="https://yux.design/kitala" target="_blank">YUX Cultural AI Lab 🔗</a>
+    </div>
+
+    <!-- Organizer 5 -->
+    <div class="speaker-card">
+      <img src="image - Sharon Ibejih.jpeg" alt="Sharon Ibejih">
+      <h3><a href="#">Sharon Ibejih</a></h3>
+      <a href="https://sharonibejih.xyz/" target="_blank">Tonative 🔗</a>
+    </div>
+
+    <!-- Organizer 6 -->
+    <div class="speaker-card">
+      <img src="Flora Headshot - Flora Oladipupo.jpeg" alt="Flora Oladipupo">
+      <h3><a href="#">Flora Oladipupo</a></h3>
+      <a href="https://linktr.ee/flora_oladipupo" target="_blank">Tolaram Group 🔗</a>
+    </div>
+
+    <!-- Organizer 7 -->
+    <div class="speaker-card">
+      <img src="unnamed - Oluchi AUDU.jpg" alt="Oluchi Audu">
+      <h3><a href="#">Oluchi Audu</a></h3>
+      <a href="https://yux.design/en-gb/kitala" target="_blank">YUX Cultural AI Lab 🔗</a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Container rows */
+.speakers-row,
+.organizers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card styles */
+.speaker-card {
+  width: 200px;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.speaker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Circular images (slightly wider for better visibility) */
+.speaker-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: none; /* clean circle, no border */
+}
+
+
+
+
+/* Bold names for h3 and links */
+.speaker-card h3,
+.speaker-card h3 a {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #0d1b2a;
+  text-decoration: none;
+}
+
+/* Badge for roles (like Workshop Chair) */
+.speaker-card span {
+  display: block;
+  font-size: 12px;
+  background: #0d1b2a;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+/* Links */
+.speaker-card a {
+  font-weight: bold; /* ensures links stay bold */
+  font-size: 13px;
+  color: #334155;
+  text-decoration: none;
+}
+.speaker-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .speaker-card {
+    width: 45%;
+  }
+}
+@media (max-width: 480px) {
+  .speaker-card {
+    width: 90%;
+  }
+}
+</style>
+
+
+  <section id="contact">
+  <h2>Contact</h2>
+  <p>
+    For questions, partnerships, or sponsorship inquiries, please reach out to us through any of the channels below:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Workshop Email:</strong> 
+      <a href="mailto:centerlowresourcellms@gmail.com">centerlowresourcellms@gmail.com</a>
+    </li>
+
+    <li>
+      <strong>Organisation Email:</strong> 
+      <a href="mailto:info@clrlc.org">info@clrlc.org</a>
+    </li>
+
+    <li>
+      <strong>Admin Email:</strong> 
+      <a href="mailto:clrlc.center@gmail.com">clrlc.center@gmail.com</a>
+    </li>
+
+    <li>
+      <strong>Website:</strong> 
+      <a href="https://www.clrlc.org/" target="_blank">
+        https://www.clrlc.org/
+      </a>
+    </li>
+
+    <li>
+      <strong>LinkedIn:</strong> 
+      <a href="https://www.linkedin.com/company/center-for-low-resource-languages-and-culture/" target="_blank">
+        Center for Low-Resource Languages and Culture
+      </a>
+    </li>
   </ul>
 </section>
 
-<!-- ===========================
-     FOOTER
-     =========================== -->
-<footer>
-  © 2026 CLRLC-LLMs Workshop Proposal <span class="neurips">· NeurIPS 2026</span><br />
-  Organised by the Center for Low-Resource Languages and Cultures (CLRLC)
-</footer>
-
-<!-- Tiny script to render fallback initials when an avatar image fails -->
-<script>
-  document.querySelectorAll('.person .avatar.no-img').forEach(el => {
-    el.textContent = el.dataset.initials || '';
-  });
-  document.querySelectorAll('.sponsor.placeholder').forEach(el => {
-    el.textContent = el.dataset.label || 'Logo';
-  });
-</script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CLRLCLLMs Workshop @ NeurIPS | Built by the Center for Low-Resource Languages and Cultures (CLRLC)</p>
+  </footer>
 
 </body>
 </html>

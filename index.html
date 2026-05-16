@@ -66,7 +66,12 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, #020617, #312e81, #581c87);
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.75), rgba(49, 46, 129, 0.75)),
+        url('download.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: white;
       padding: 120px 0;
       text-align: center;
@@ -83,7 +88,7 @@
     }
 
     .hero h1 {
-      font-size: 3.8rem;
+      font-size: 3rem;
       font-weight: 800;
       line-height: 1.15;
       margin-bottom: 30px;
@@ -324,15 +329,16 @@
 
   <section class="hero" id="home">
     <div class="container">
-      <div class="hero-badge">NeurIPS 2026 Workshop · Sydney, Australia</div>
+      
 
       <h1>
-        2nd Workshop on Centering Low-Resource Languages and Cultures in the Age of Large Language Models
+        The Second Workshop on Centering Low-Resource Languages and Cultures in the Age of Large Language Models <br>
+        <span style="font-size:1.1rem; font-weight:500; color:#cbd5e1; letter-spacing:0.5px;">
+          CLRLC–LLMs Workshop @ NeurIPS 2026 · Sydney, Australia
+        </span>
       </h1>
 
-      <p>
-        Advancing multilingual and multicultural aware LLMs for low-resource languages across Africa, Asia, Latin America, Indigenous communities, and other underrepresented regions worldwide.
-      </p>
+      
 
       <div class="hero-buttons">
         <a href="#" class="btn btn-primary">Call for Papers</a>
